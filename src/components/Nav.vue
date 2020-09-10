@@ -21,9 +21,9 @@
 
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start">
-				<a class="navbar-item">Home</a>
-				<a class="navbar-item">Playlist</a>
-				<a class="navbar-item">Channel</a>
+				<router-link tag="a" to="/" class="navbar-item">Home</router-link>
+				<router-link tag="a" to="/playlist" class="navbar-item">Playlist</router-link>
+				<router-link tag="a" to="/channel" class="navbar-item">Channel</router-link>
 			</div>
 
 			<div class="navbar-end">

@@ -81,8 +81,8 @@
 										</div>
                                         <h5>3GP</h5>
 										<div class="buttons">
-											<button class="button is-success">240p (size)</button>
-											<button class="button is-info">144p (size)</button>
+											<button class="button is-warning">240p (size)</button>
+											<button class="button is-warning">144p (size)</button>
 										</div>
 									</div>
 								</div>
