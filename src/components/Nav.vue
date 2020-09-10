@@ -2,7 +2,8 @@
 	<nav class="navbar" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
 			<a class="navbar-item" href="https://bulma.io">
-				<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+				<img src="../assets/img/youtube_icon.png" width="30" height="28" />
+				<b>Downloader</b>
 			</a>
 
 			<a
@@ -21,20 +22,8 @@
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start">
 				<a class="navbar-item">Home</a>
-
-				<a class="navbar-item">Documentation</a>
-
-				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">More</a>
-
-					<div class="navbar-dropdown">
-						<a class="navbar-item">About</a>
-						<a class="navbar-item">Jobs</a>
-						<a class="navbar-item">Contact</a>
-						<hr class="navbar-divider" />
-						<a class="navbar-item">Report an issue</a>
-					</div>
-				</div>
+				<a class="navbar-item">Playlist</a>
+				<a class="navbar-item">Channel</a>
 			</div>
 
 			<div class="navbar-end">
