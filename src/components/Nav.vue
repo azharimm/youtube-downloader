@@ -23,17 +23,17 @@
 			<div class="navbar-start">
 				<router-link tag="a" to="/" class="navbar-item">Home</router-link>
 				<router-link tag="a" to="/playlist" class="navbar-item">Playlist</router-link>
-				<router-link tag="a" to="/channel" class="navbar-item">Channel</router-link>
+				<!-- <router-link tag="a" to="/channel" class="navbar-item">Channel</router-link> -->
 			</div>
 
 			<div class="navbar-end">
 				<div class="navbar-item">
-					<div class="buttons">
+					<!-- <div class="buttons">
 						<a class="button is-primary">
 							<strong>Sign up</strong>
 						</a>
 						<a class="button is-light">Log in</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
