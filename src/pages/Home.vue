@@ -9,7 +9,7 @@
 							<form @submit.prevent="submitUrl" class="mt-5">
 								<div class="field">
 									<div class="control is-medium">
-										<input class="input is-medium" type="text" placeholder="Enter Youtube URL" required />
+										<input class="input is-medium" type="text" v-model="youtube_url" placeholder="Enter Youtube URL" required />
 									</div>
 								</div>
 								<div class="field has-text-centered">
@@ -18,7 +18,7 @@
 							</form>
 						</div>
 					</div>
-					<div class="columnn is-centered">
+					<div class="columnn is-centered" v-if="data">
 						<div class="column is-half is-offset-one-quarter">
 							<Card>
 								<CardImage img_url="https://i.ytimg.com/vi/av7FADk99UQ/default.jpg" />
@@ -62,6 +62,10 @@ import Mp4VidOnly from "../components/home/Mp4VidOnly";
 import WebM from "../components/home/WebM";
 import ThreeGp from "../components/home/ThreeGp";
 
+import {api_cors, api_youtube} from '../env';
+
+import axios from 'axios';
+
 export default {
 	components: {
 		LogoBanner,
@@ -77,9 +81,30 @@ export default {
 		WebM,
 		ThreeGp,
 	},
+	data() {
+		return {
+			youtube_url: null,
+			data: null
+		}
+	},
+	mounted() {
+		console.log('Oh, Hi there!');
+	},
 	methods: {
 		submitUrl() {
-			console.log('hehe');
+			if(!this.youtube_url) {
+				this.errorUrlAlert();
+			}
+			if(!this.checkValidUrl()) {
+				this.errorUrlAlert();
+			}
+
+			this.fetchData();
+		},
+		fetchData() {
+			axios.get(`${api_cors}+${api_youtube}+${this.youtube_url}`).then(response => {
+				this.data = response.data;
+			});
 		},
 		errorUrlAlert() {
 			this.$swal({
@@ -89,6 +114,9 @@ export default {
 				footer: 'E.g : &nbsp;<a href> https://www.youtube.com/watch?v=qwe123</a>'
 			});
 		},
+		checkValidUrl() {
+			return this.youtube_url.includes('https://www.youtube.com');
+		}
 	},
 };
 </script>
