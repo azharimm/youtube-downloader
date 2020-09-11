@@ -18,17 +18,20 @@
 							</form>
 						</div>
 					</div>
-					<div class="columnn is-centered" v-if="data">
+					<div class="columnn is-centered">
 						<div class="column is-half is-offset-one-quarter">
-							<Card>
-								<CardImage img_url="https://i.ytimg.com/vi/av7FADk99UQ/default.jpg" />
+							<Loader v-if="is_loading" />
+							<Card v-if="!is_loading && data">
+								<CardImage :img_url="data.thumbnails" />
 								<CardContent>
 									<Media>
 										<MediaContent>
 											<p
 												class="title is-4"
-											>Film Komedi - (Bagian 2) Digoyang Trio Macan - Kolaborasi Trio Macan - Eps 34 Serial Gembira Ria</p>
-											<p class="subtitle is-6">Selamat Menyaksikan</p>
+											>{{data.title}}</p>
+											<p class="subtitle is-6">
+												{{data.description}}
+											</p>
 										</MediaContent>
 									</Media>
 									<Content>
@@ -61,6 +64,7 @@ import Audio from "../components/home/Audio";
 import Mp4VidOnly from "../components/home/Mp4VidOnly";
 import WebM from "../components/home/WebM";
 import ThreeGp from "../components/home/ThreeGp";
+import Loader from "../components/home/Loader";
 
 import {api_cors, api_youtube} from '../env';
 
@@ -80,11 +84,13 @@ export default {
 		Mp4VidOnly,
 		WebM,
 		ThreeGp,
+		Loader
 	},
 	data() {
 		return {
 			youtube_url: null,
-			data: null
+			data: null,
+			is_loading: false
 		}
 	},
 	mounted() {
@@ -94,16 +100,26 @@ export default {
 		submitUrl() {
 			if(!this.youtube_url) {
 				this.errorUrlAlert();
+				return;
 			}
 			if(!this.checkValidUrl()) {
 				this.errorUrlAlert();
+				return;
 			}
 
 			this.fetchData();
 		},
 		fetchData() {
+			this.is_loading = true;
 			axios.get(`${api_cors}+${api_youtube}+${this.youtube_url}`).then(response => {
+				if(!response.data.status) {
+					this.errorUrlAlert();
+					return;
+				}
 				this.data = response.data;
+				this.is_loading = false;
+			}).catch(e => {
+				console.log('Something went wrong: ' +e);
 			});
 		},
 		errorUrlAlert() {
