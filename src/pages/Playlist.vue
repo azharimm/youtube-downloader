@@ -5,12 +5,7 @@
 				<div class="container">
 					<div class="columns is-centered">
 						<div class="column is-half">
-							<center>
-								<img src="../assets/img/youtube_icon.png" width="150px" />
-							</center>
-							<center>
-								<h1 class="title">Youtube Playlist Downloader</h1>
-							</center>
+							<LogoBanner title="Youtube Playlist Downloader" />
 							<form action="#" class="mt-5">
 								<div class="field">
 									<div class="control is-medium">
@@ -73,5 +68,10 @@
 </template>
 
 <script>
-export default {};
+import LogoBanner from '../components/LogoBanner'
+export default {
+	components: {
+		LogoBanner
+	}
+};
 </script>

@@ -5,12 +5,7 @@
 				<div class="container">
 					<div class="columns is-centered">
 						<div class="column is-half">
-							<center>
-								<img src="../assets/img/youtube_icon.png" width="150px" />
-							</center>
-							<center>
-								<h1 class="title">Youtube Downloader</h1>
-							</center>
+							<LogoBanner title="Youtube Downloader" />
 							<form action="#" class="mt-5">
 								<div class="field">
 									<div class="control is-medium">
@@ -25,68 +20,26 @@
 					</div>
 					<div class="columnn is-centered">
 						<div class="column is-half is-offset-one-quarter">
-							<div class="card">
-								<div class="card-image">
-									<figure class="image is-4by3">
-										<img src="https://i.ytimg.com/vi/av7FADk99UQ/default.jpg" alt="Placeholder image" />
-									</figure>
-								</div>
-								<div class="card-content">
-									<div class="media">
-										<div class="media-content">
+							<Card>
+								<CardImage img_url="https://i.ytimg.com/vi/av7FADk99UQ/default.jpg" />
+								<CardContent>
+									<Media>
+										<MediaContent>
 											<p
 												class="title is-4"
 											>Film Komedi - (Bagian 2) Digoyang Trio Macan - Kolaborasi Trio Macan - Eps 34 Serial Gembira Ria</p>
 											<p class="subtitle is-6">Selamat Menyaksikan</p>
-										</div>
-									</div>
-
-									<div class="content">
-										<h5>MP4 Format</h5>
-										<div class="buttons">
-											<button class="button is-success">8K (size)</button>
-											<button class="button is-success">4K (size)</button>
-											<button class="button is-success">2K (size)</button>
-											<button class="button is-success">1080p (size)</button>
-											<button class="button is-success">720p (size)</button>
-											<button class="button is-success">480p (size)</button>
-											<button class="button is-success">360p (size)</button>
-										</div>
-                                        <h5>Audio</h5>
-										<div class="buttons">
-											<button class="button is-info">128kb/s M4A (3.9 MiB)</button>
-											<button class="button is-info">MP3 320kb/s</button>
-										</div>
-                                        <h5>MP4 (Video Only)</h5>
-										<div class="buttons">
-											<button class="button">8K (size)</button>
-											<button class="button">4K (size)</button>
-											<button class="button">2K (size)</button>
-											<button class="button">1080p (size)</button>
-											<button class="button">720p (size)</button>
-											<button class="button">360p (size)</button>
-											<button class="button">240p (size)</button>
-											<button class="button">144p (size)</button>
-										</div>
-                                        <h5>WebM (Video Only)</h5>
-										<div class="buttons">
-											<button class="button">4K (size)</button>
-											<button class="button">2K (size)</button>
-											<button class="button">1080p (size)</button>
-											<button class="button">720p (size)</button>
-											<button class="button">480p (size)</button>
-											<button class="button">360p (size)</button>
-											<button class="button">240p (size)</button>
-											<button class="button">144p (size)</button>
-										</div>
-                                        <h5>3GP</h5>
-										<div class="buttons">
-											<button class="button is-warning">240p (size)</button>
-											<button class="button is-warning">144p (size)</button>
-										</div>
-									</div>
-								</div>
-							</div>
+										</MediaContent>
+									</Media>
+									<Content>
+										<Mp4 />
+										<Audio />
+										<Mp4VidOnly />
+										<WebM />
+										<ThreeGp />
+									</Content>
+								</CardContent>
+							</Card>
 						</div>
 					</div>
 				</div>
@@ -96,5 +49,33 @@
 </template>
 
 <script>
-export default {};
+import LogoBanner from "../components/LogoBanner";
+import Card from "../components/Card";
+import CardImage from "../components/CardImage";
+import CardContent from "../components/CardContent";
+import Media from "../components/Media";
+import MediaContent from "../components/MediaContent";
+import Content from "../components/Content";
+import Mp4 from "../components/home/Mp4";
+import Audio from "../components/home/Audio";
+import Mp4VidOnly from "../components/home/Mp4VidOnly";
+import WebM from "../components/home/WebM";
+import ThreeGp from "../components/home/ThreeGp";
+
+export default {
+	components: {
+		LogoBanner,
+		Card,
+		CardImage,
+		CardContent,
+		Media,
+		MediaContent,
+		Content,
+		Mp4,
+		Audio,
+		Mp4VidOnly,
+		WebM,
+		ThreeGp,
+	},
+};
 </script>
