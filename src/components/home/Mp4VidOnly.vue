@@ -2,20 +2,42 @@
 	<div class="mb-5">
 		<h5>MP4 (Video Only)</h5>
 		<div class="buttons">
-			<button class="button">8K (size)</button>
-			<button class="button">4K (size)</button>
-			<button class="button">2K (size)</button>
-			<button class="button">1080p (size)</button>
-			<button class="button">720p (size)</button>
-			<button class="button">360p (size)</button>
-			<button class="button">240p (size)</button>
-			<button class="button">144p (size)</button>
+			<div v-for="(data, index) in format" :key="index">
+				<a
+					:href="data.url"
+					target="_blank"
+					:id="data.id"
+					class="button mr-3"
+					v-if="data.id == 136"
+				>720p ({{(data.size / 1024 / 1024).toFixed(2)}} MB)</a>
+				<a
+					:href="data.url"
+					target="_blank"
+					:id="data.id"
+					class="button mr-3"
+					v-if="data.id == 134"
+				>360p ({{(data.size / 1024 / 1024).toFixed(2)}} MB)</a>
+				<a
+					:href="data.url"
+					target="_blank"
+					:id="data.id"
+					class="button mr-3"
+					v-if="data.id == 133"
+				>240p ({{(data.size / 1024 / 1024).toFixed(2)}} MB)</a>
+				<a
+					:href="data.url"
+					target="_blank"
+					:id="data.id"
+					class="button mr-3"
+					v-if="data.id == 160"
+				>144p ({{(data.size / 1024 / 1024).toFixed(2)}} MB)</a>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
-    
-}
+	props: ["format"],
+};
 </script>

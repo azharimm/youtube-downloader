@@ -35,11 +35,11 @@
 										</MediaContent>
 									</Media>
 									<Content>
-										<Mp4 />
-										<Audio />
-										<Mp4VidOnly />
-										<WebM />
-										<ThreeGp />
+										<Mp4 :format="data.format" />
+										<Audio :format="data.format" />
+										<Mp4VidOnly :format="data.format" />
+										<WebM :format="data.format" />
+										<ThreeGp :format="data.format" />
 									</Content>
 								</CardContent>
 							</Card>
