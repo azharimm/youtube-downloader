@@ -127,6 +127,7 @@ export default {
 				})
 				.catch((e) => {
 					console.log("Something went wrong: " + e);
+					this.is_loading = false;
 				});
 		},
 		errorUrlAlert() {

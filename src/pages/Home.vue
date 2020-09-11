@@ -120,7 +120,9 @@ export default {
 				this.is_loading = false;
 			}).catch(e => {
 				console.log('Something went wrong: ' +e);
+				this.is_loading = false;
 			});
+			
 		},
 		errorUrlAlert() {
 			this.$swal({

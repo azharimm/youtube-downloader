@@ -1,29 +1,8 @@
-# youtube-downloader
+# Install
+- clone
+- npm install / yarn install
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Screenshot
+- Demo : https://ytb-downloader-4fc3d.web.app/
+![Home](https://raw.githubusercontent.com/azharimm/youtube-downloader/master/home.PNG)
+![Playlist](https://raw.githubusercontent.com/azharimm/youtube-downloader/master/playlist.PNG)
