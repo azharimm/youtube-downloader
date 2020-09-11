@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<section class="hero is-small is-bold">
+		<section class="hero is-small is-bold mt-5">
 			<div class="hero-body">
 				<div class="container">
 					<div class="columns is-centered">
