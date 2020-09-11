@@ -1,11 +1,10 @@
 <template>
 	<nav class="navbar" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
-			<a class="navbar-item" href="https://bulma.io">
+			<router-link tag="a" class="navbar-item" to="/">
 				<img src="../assets/img/youtube_icon.png" width="30" height="28" />
 				<b>Downloader</b>
-			</a>
-
+			</router-link>
 			<a
 				role="button"
 				class="navbar-burger burger"
