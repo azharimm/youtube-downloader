@@ -6,14 +6,14 @@
 					<div class="columns is-centered">
 						<div class="column is-half">
 							<LogoBanner title="Youtube Downloader" />
-							<form action="#" class="mt-5">
+							<form @submit.prevent="submitUrl" class="mt-5">
 								<div class="field">
 									<div class="control is-medium">
-										<input class="input is-medium" type="text" placeholder="Enter Youtube URL" />
+										<input class="input is-medium" type="text" placeholder="Enter Youtube URL" required />
 									</div>
 								</div>
 								<div class="field has-text-centered">
-									<button class="button is-primary is-rounded">Download</button>
+									<button type="submit" class="button is-primary is-rounded">Download</button>
 								</div>
 							</form>
 						</div>
@@ -76,6 +76,19 @@ export default {
 		Mp4VidOnly,
 		WebM,
 		ThreeGp,
+	},
+	methods: {
+		submitUrl() {
+			console.log('hehe');
+		},
+		errorUrlAlert() {
+			this.$swal({
+				icon: "error",
+				title: "Oops...",
+				text: "Invalid Youtube URL!",
+				footer: 'E.g : &nbsp;<a href> https://www.youtube.com/watch?v=qwe123</a>'
+			});
+		},
 	},
 };
 </script>
