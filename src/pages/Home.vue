@@ -66,7 +66,7 @@ import WebM from "../components/home/WebM";
 import ThreeGp from "../components/home/ThreeGp";
 import Loader from "../components/home/Loader";
 
-import {api_cors, api_youtube} from '../env';
+import {api_cors_anywhere, api_youtube} from '../env';
 
 import axios from 'axios';
 
@@ -111,7 +111,7 @@ export default {
 		},
 		fetchData() {
 			this.is_loading = true;
-			axios.get(`${api_cors}+${api_youtube}+${this.youtube_url}`).then(response => {
+			axios.get(`${api_cors_anywhere}${api_youtube}${this.youtube_url}`).then(response => {
 				if(!response.data.status) {
 					this.errorUrlAlert();
 					return;
