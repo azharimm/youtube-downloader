@@ -11,6 +11,7 @@
 				aria-label="menu"
 				aria-expanded="false"
 				data-target="navbarBasicExample"
+				@click.prevent="navBurger"
 			>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
@@ -18,11 +19,10 @@
 			</a>
 		</div>
 
-		<div id="navbarBasicExample" class="navbar-menu">
+		<div id="navbarBasicExample" class="navbar-menu" :class="{'is-active': is_active}">
 			<div class="navbar-start">
 				<router-link tag="a" to="/" class="navbar-item">Home</router-link>
 				<router-link tag="a" to="/playlist" class="navbar-item">Playlist</router-link>
-				<!-- <router-link tag="a" to="/channel" class="navbar-item">Channel</router-link> -->
 			</div>
 
 			<div class="navbar-end">
@@ -41,6 +41,16 @@
 
 <script>
 export default {
+	data() {
+		return {
+			is_active: false
+		}
+	},
+	methods: {
+		navBurger() {
+			this.is_active = !this.is_active;		
+		}
+	}
 
 };
 </script>
