@@ -189,7 +189,7 @@
 </template>
 
 <script>
-import { api_cors, api_youtube } from "../../env";
+import { api_cors_anywhere, api_youtube } from "../../env";
 import axios from "axios";
 export default {
 	props: ["item", "index", "type"],
@@ -204,7 +204,7 @@ export default {
 	methods: {
 		fetchData() {
 			axios
-				.get(`${api_cors}${api_youtube}${this.item.url}`)
+				.get(`${api_cors_anywhere}${api_youtube}${this.item.url}`)
 				.then((response) => {
 					if (!response.data.status) {
 						console.log("Error Fetching Data...");
